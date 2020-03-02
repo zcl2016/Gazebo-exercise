@@ -1,0 +1,20 @@
+set (sources ${sources}
+  skyx/src/AtmosphereManager.cpp
+  skyx/src/BasicController.cpp
+  skyx/src/CloudsManager.cpp
+  skyx/src/ColorGradient.cpp
+  skyx/src/GPUManager.cpp
+  skyx/src/MeshManager.cpp
+  skyx/src/MoonManager.cpp
+  skyx/src/SkyX.cpp
+  skyx/src/VCloudsManager.cpp
+  skyx/src/VClouds/DataManager.cpp
+  skyx/src/VClouds/Ellipsoid.cpp
+  skyx/src/VClouds/FastFakeRandom.cpp
+  skyx/src/VClouds/GeometryBlock.cpp
+  skyx/src/VClouds/GeometryManager.cpp
+  skyx/src/VClouds/Lightning.cpp
+  skyx/src/VClouds/LightningManager.cpp
+  skyx/src/VClouds/VClouds.cpp
+  PARENT_SCOPE
+)

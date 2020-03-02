@@ -1,0 +1,42 @@
+<!-- This is a launch file that runs the bare minimum requirements to get -->
+<!-- gazebo running for a fixed-wing aircraft -->
+
+<launch>
+  
+  <include file="$(find hector_quadrotor_gazebo)/worlds/empty_world.launch">
+    <arg name="paused" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="verbose" value="false"/>
+    <arg name="debug" value="false"/>
+    <arg name="world_name" value="$(find hector_quadrotor_gazebo)/worlds/kunming_airport.world"/>
+  </include>
+
+
+  <group ns="bebop_0">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_0" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_0" />
+      <arg name="x" value="0.0" />
+      <arg name="y" value="0.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  
+</launch>

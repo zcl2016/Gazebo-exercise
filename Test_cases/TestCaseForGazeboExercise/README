@@ -1,0 +1,18 @@
+# 纯Gazebo、Gazebo-Ros架构下100架次及以上规模四旋翼仿真对比案例
+
+## 案例运行流程
+
+### 安装Gazebo-exercise
+    1、参照Gazebo-exercise安装教程进行安装
+    2、需要将四旋翼模型quadrotor、quadrotor_with_camera拷贝至~/.gazebo/models目录下
+
+### 编译运行TestCaseForGazeboExercise案例包
+    1、cd TestCaseForGazeboExercise
+    2、catkin_make
+    3、利用roslaunch运行相关案例
+	1）纯Gazebo下：
+	   启动100架次携带Camera四旋翼无人机：roslaunch quadrotorsim quadrotor_with_camera_100.launch
+           启动100架次不携带Camera四旋翼无人机：roslaunch quadrotorsim quadrotor_without_camera_100.launch
+	2）Gazebo-Ros架构下：
+	   启动100架次携带Camera四旋翼无人机：roslaunch quadrotorsim ros_quadrotor_with_camera_100.launch
+           启动100架次不携带Camera四旋翼无人机：roslaunch quadrotorsim ros_quadrotor_without_camera_100.launch

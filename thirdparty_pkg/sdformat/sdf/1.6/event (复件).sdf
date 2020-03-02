@@ -1,0 +1,17 @@
+<!-- Event -->
+<element name="event" required="0">
+  <description>The event tag specifies the numbers of threads and size of the block.</description>
+
+  <attribute name="numbers_of_thread" type="int" default="8" required="0">
+    <description>The numbers of the thread's callback parameters.</description>
+  </attribute>
+
+  <attribute name="size_of_block" type="int" default="25" required="0">
+    <description>the size of block to tbb thread</description>
+  </attribute>
+  
+  <attribute name="type" type="int" default="0" required="0">
+    <description>the type to block partion</description>
+  </attribute>
+
+</element> <!-- Event -->

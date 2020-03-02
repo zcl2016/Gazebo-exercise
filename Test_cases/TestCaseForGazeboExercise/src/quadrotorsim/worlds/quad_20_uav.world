@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+	<sdf version="1.4">
+		<world name="test">
+			<physics type="ode" name="ode">
+      			<real_time_update_rate>0</real_time_update_rate>
+      			<max_step_size>0.001</max_step_size>
+      			<real_time_factor>1.0</real_time_factor>
+    		</physics>
+			<include>
+				<uri>model://sun</uri>
+			</include>
+
+            <include>
+		      <uri>model://kunming_airport</uri>
+		      <pose>0 0 0  0 0 0</pose>
+		    </include>
+
+			<model name='uav_0'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 -10 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_0</robotNamespace>
+						<topicName>/uav_0/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_1'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 -9 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_1</robotNamespace>
+						<topicName>/uav_1/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_2'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 -8 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_2</robotNamespace>
+						<topicName>/uav_2/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_3'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 -7 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_3</robotNamespace>
+						<topicName>/uav_3/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_4'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 -6 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_4</robotNamespace>
+						<topicName>/uav_4/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_5'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 -5 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_5</robotNamespace>
+						<topicName>/uav_5/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_6'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 -4 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_6</robotNamespace>
+						<topicName>/uav_6/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_7'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 -3 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_7</robotNamespace>
+						<topicName>/uav_7/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_8'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 -2 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_8</robotNamespace>
+						<topicName>/uav_8/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_9'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 -1 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_9</robotNamespace>
+						<topicName>/uav_9/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_10'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 0 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_10</robotNamespace>
+						<topicName>/uav_10/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_11'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 1 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_11</robotNamespace>
+						<topicName>/uav_11/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_12'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 2 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_12</robotNamespace>
+						<topicName>/uav_12/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_13'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 3 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_13</robotNamespace>
+						<topicName>/uav_13/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_14'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 4 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_14</robotNamespace>
+						<topicName>/uav_14/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_15'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 5 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_15</robotNamespace>
+						<topicName>/uav_15/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_16'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 6 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_16</robotNamespace>
+						<topicName>/uav_16/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_17'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 7 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_17</robotNamespace>
+						<topicName>/uav_17/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_18'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 8 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_18</robotNamespace>
+						<topicName>/uav_18/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+			<model name='uav_19'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-10 9 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so' >
+						<robotNamespace>uav_19</robotNamespace>
+						<topicName>/uav_19/cmd_vel</topicName>
+				</plugin>
+			</include>
+			</model>
+
+		<exercise_opt>
+			<event_signal parallel_type=1 threads=6 />
+			<updatephysics_dxprocessislands parallel_type=0 threads=4 />
+			<collide_space>0</collide_space>
+			<dxhashspace_collide threads=0 />
+		</exercise_opt>
+
+		</world>
+	</sdf>

@@ -1,0 +1,21 @@
+<!-- Server -->
+<element name="distributed" required="0">
+  <description>The distributed tag specifies the ip and port of the remote server.</description>
+
+ <attribute name="type" type="int" default="0" required="0">
+    <description>The type of the distribution(0:client or 1:server).</description>
+  </attribute>
+
+  <attribute name="ip" type="string" default="192.168.1.4" required="0">
+    <description>The ip of the remote server.</description>
+  </attribute>
+
+  <attribute name="flag" type="int" default="0" required="0">
+    <description>The flag of the remote server.</description>
+  </attribute>
+
+  <attribute name="port" type="int" default="6666" required="0">
+    <description>the port of the remote port</description>
+  </attribute>
+
+</element> <!-- Server -->

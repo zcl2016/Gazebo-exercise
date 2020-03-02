@@ -1,0 +1,135 @@
+<!-- This is a launch file that runs the bare minimum requirements to get -->
+<!-- gazebo running for a fixed-wing aircraft -->
+
+<launch>
+  
+  <include file="$(find quadrotorsim)/worlds/empty_world.launch">
+    <arg name="paused" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="verbose" value="false"/>
+    <arg name="debug" value="false"/>
+    <arg name="world_name" value="$(find quadrotorsim)/worlds/quad_200.world"/>
+  </include>
+  
+  <!--
+  <node name="action_controller0" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_0/cmd_vel" />
+  </node>
+
+  <node name="action_controller1" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_1/cmd_vel" />
+  </node>
+
+  <node name="action_controller2" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_2/cmd_vel" />
+  </node>
+
+  <node name="action_controller3" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_3/cmd_vel" />
+  </node>
+
+  <node name="action_controller4" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_4/cmd_vel" />
+  </node>
+
+  <node name="action_controller5" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_5/cmd_vel" />
+  </node>
+
+  <node name="action_controller6" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_6/cmd_vel" />
+  </node>
+
+  <node name="action_controller7" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_7/cmd_vel" />
+  </node>
+
+  <node name="action_controller8" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_8/cmd_vel" />
+  </node>
+
+  <node name="action_controller9" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_9/cmd_vel" />
+  </node>
+
+  <node name="action_controller10" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_10/cmd_vel" />
+  </node>
+
+  <node name="action_controller11" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_11/cmd_vel" />
+  </node>
+
+  <node name="action_controller12" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_12/cmd_vel" />
+  </node>
+
+  <node name="action_controller13" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_13/cmd_vel" />
+  </node>
+
+  <node name="action_controller14" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_14/cmd_vel" />
+  </node>
+
+  <node name="action_controller15" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_15/cmd_vel" />
+  </node>
+
+  <node name="action_controller16" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_16/cmd_vel" />
+  </node>
+
+  <node name="action_controller17" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_17/cmd_vel" />
+  </node>
+
+  <node name="action_controller18" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_18/cmd_vel" />
+  </node>
+
+  <node name="action_controller19" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_19/cmd_vel" />
+  </node>
+
+  <node name="action_controller20" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_20/cmd_vel" />
+  </node>
+
+  <node name="action_controller21" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_21/cmd_vel" />
+  </node>
+
+  <node name="action_controller22" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_22/cmd_vel" />
+  </node>
+
+  <node name="action_controller23" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_23/cmd_vel" />
+  </node>
+
+  <node name="action_controller24" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_24/cmd_vel" />
+  </node>
+
+  <node name="action_controller25" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_25/cmd_vel" />
+  </node>
+
+  <node name="action_controller26" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_26/cmd_vel" />
+  </node>
+
+  <node name="action_controller27" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_27/cmd_vel" />
+  </node>
+
+  <node name="action_controller28" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_28/cmd_vel" />
+  </node>
+
+  <node name="action_controller29" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_29/cmd_vel" />
+  </node>
+  -->
+</launch>

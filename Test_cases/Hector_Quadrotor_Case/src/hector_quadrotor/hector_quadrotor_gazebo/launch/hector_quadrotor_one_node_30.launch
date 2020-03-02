@@ -1,0 +1,795 @@
+<!-- This is a launch file that runs the bare minimum requirements to get -->
+<!-- gazebo running for a fixed-wing aircraft -->
+
+<launch>
+  
+  <include file="$(find hector_quadrotor_gazebo)/worlds/empty_world.launch">
+    <arg name="paused" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="verbose" value="false"/>
+    <arg name="debug" value="false"/>
+    <arg name="world_name" value="$(find hector_quadrotor_gazebo)/worlds/kunming_airport.world"/>
+  </include>
+
+
+  <group ns="bebop_0">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_0" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_0" />
+      <arg name="x" value="0.0" />
+      <arg name="y" value="0.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_1">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_1" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_1" />
+      <arg name="x" value="0.0" />
+      <arg name="y" value="5.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_2">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_2" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_2" />
+      <arg name="x" value="0.0" />
+      <arg name="y" value="10.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_3">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_3" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_3" />
+      <arg name="x" value="0.0" />
+      <arg name="y" value="15.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_4">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_4" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_4" />
+      <arg name="x" value="0.0" />
+      <arg name="y" value="20.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_5">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_5" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_5" />
+      <arg name="x" value="0.0" />
+      <arg name="y" value="25.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_6">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_6" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_6" />
+      <arg name="x" value="0.0" />
+      <arg name="y" value="30.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_7">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_7" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_7" />
+      <arg name="x" value="0.0" />
+      <arg name="y" value="35.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_8">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_8" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_8" />
+      <arg name="x" value="0.0" />
+      <arg name="y" value="40.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_9">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_9" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_9" />
+      <arg name="x" value="0.0" />
+      <arg name="y" value="45.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_10">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_10" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_10" />
+      <arg name="x" value="5.0" />
+      <arg name="y" value="0.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_11">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_11" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_11" />
+      <arg name="x" value="5.0" />
+      <arg name="y" value="5.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_12">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_12" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_12" />
+      <arg name="x" value="5.0" />
+      <arg name="y" value="10.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_13">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_13" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_13" />
+      <arg name="x" value="5.0" />
+      <arg name="y" value="15.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_14">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_14" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_14" />
+      <arg name="x" value="5.0" />
+      <arg name="y" value="20.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_15">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_15" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_15" />
+      <arg name="x" value="5.0" />
+      <arg name="y" value="25.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_16">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_16" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_16" />
+      <arg name="x" value="5.0" />
+      <arg name="y" value="30.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_17">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_17" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_17" />
+      <arg name="x" value="5.0" />
+      <arg name="y" value="35.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_18">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_18" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_18" />
+      <arg name="x" value="5.0" />
+      <arg name="y" value="40.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_19">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_19" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_19" />
+      <arg name="x" value="5.0" />
+      <arg name="y" value="45.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_20">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_20" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_20" />
+      <arg name="x" value="10.0" />
+      <arg name="y" value="0.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_21">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_21" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_21" />
+      <arg name="x" value="10.0" />
+      <arg name="y" value="5.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_22">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_22" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_22" />
+      <arg name="x" value="10.0" />
+      <arg name="y" value="10.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_23">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_23" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_23" />
+      <arg name="x" value="10.0" />
+      <arg name="y" value="15.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_24">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_24" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_24" />
+      <arg name="x" value="10.0" />
+      <arg name="y" value="20.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_25">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_25" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_25" />
+      <arg name="x" value="10.0" />
+      <arg name="y" value="25.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_26">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_26" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_26" />
+      <arg name="x" value="10.0" />
+      <arg name="y" value="30.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_27">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_27" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_27" />
+      <arg name="x" value="10.0" />
+      <arg name="y" value="35.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_28">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_28" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_28" />
+      <arg name="x" value="10.0" />
+      <arg name="y" value="40.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+  <group ns="bebop_29">    
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+      <arg name="name" value="bebop_29" />
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_downward_cam.gazebo.xacro"/>
+      <arg name="tf_prefix" value="bebop_29" />
+      <arg name="x" value="10.0" />
+      <arg name="y" value="45.0" />
+      <arg name="z" value="0.186" />
+    </include>
+    <node name="autopilot_pseudo" pkg="hector" type="hector_pseudo_controller" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>    
+
+    <node name="pathfollower" pkg="hector" type="hector_path_follower" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <!-- <node name="current_path_publisher" pkg="rostopic" type="rostopic" args="pub current_path hector_msgs/Current_Path '0' '15.0'  '[0.0, 0.0, -100.0]'  '[1.0, 0.0, 0.0]'  '[0.0, 0.0, -100.0]'  '100.0' '1'"/> -->
+
+    <node name="pathmanager" pkg="hector" type="hector_path_manager" output="screen">
+      <!-- <remap from="state" to="truth"/>  -->
+    </node>
+
+    <node name="pathplanner" pkg="hector" type="hector_path_planner"/>
+  </group>
+
+</launch>

@@ -1,0 +1,14 @@
+<!-- This is a launch file that runs the bare minimum requirements to get -->
+<!-- gazebo running for a fixed-wing aircraft -->
+
+<launch>
+  
+  <include file="$(find quadrotorsim)/worlds/empty_world.launch">
+    <arg name="paused" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="verbose" value="false"/>
+    <arg name="debug" value="false"/>
+    <arg name="world_name" value="$(find quadrotorsim)/worlds/quad_without_camera_100.world"/>
+  </include>
+
+</launch>

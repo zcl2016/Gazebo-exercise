@@ -1,0 +1,837 @@
+
+<?xml version="1.0"?>
+	<sdf version="1.4">
+		<world name="test">
+			<use_asyn_event>
+      			<use_sim_time>1</use_sim_time>
+      			<frequency>100</frequency>
+    	</use_asyn_event>
+    	<use_asyn_processmessages>
+      			<flag>1</flag>
+      			<frequency>300</frequency>
+    	</use_asyn_processmessages>
+      <exercise_opt>
+      			<event_signal parallel_type=0 threads=0/>
+      			<updatephysics_dxprocessislands parallel_type=0 threads=8 />
+      			<collide_space>0</collide_space>
+      			<dxhashspace_collide threads=0 />
+    	</exercise_opt>
+      <physics type="ode" name="ode">
+      			<real_time_update_rate>0</real_time_update_rate>
+      			<max_step_size>0.001</max_step_size>
+      			<real_time_factor>1.0</real_time_factor>
+    	</physics>
+			<include>
+				<uri>model://sun</uri>
+			</include>
+			<!--
+			<include>
+				<uri>model://ground_plane</uri>
+			</include>
+			-->
+      <include>
+		      <uri>model://kunming_airport</uri>
+		      <pose>0 0 0  0 0 0</pose>
+		    </include>
+
+			<model name='uav_0'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -200 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_1'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -190 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_2'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -180 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_3'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -170 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_4'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -160 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_5'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -150 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_6'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -140 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_7'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -130 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_8'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -120 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_9'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -110 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_10'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -100 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_11'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -90 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_12'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -80 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_13'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -70 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_14'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -60 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_15'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -50 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_16'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -40 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_17'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -30 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_18'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -20 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_19'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 -10 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_20'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 0 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_21'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 10 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_22'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 20 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_23'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 30 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_24'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 40 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_25'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 50 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_26'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 60 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_27'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 70 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_28'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 80 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_29'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 90 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_30'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 100 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_31'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 110 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_32'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 120 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_33'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 130 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_34'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 140 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_35'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 150 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_36'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 160 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_37'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 170 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_38'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 180 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_39'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 190 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_40'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-200 200 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_41'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -200 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_42'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -190 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_43'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -180 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_44'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -170 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_45'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -160 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_46'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -150 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_47'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -140 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_48'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -130 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_49'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -120 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_50'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -110 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_51'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -100 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_52'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -90 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_53'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -80 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_54'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -70 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_55'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -60 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_56'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -50 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_57'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -40 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_58'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -30 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_59'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -20 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_60'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 -10 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_61'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 0 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_62'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 10 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_63'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 20 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_64'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 30 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_65'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 40 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_66'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 50 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_67'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 60 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_68'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 70 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_69'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 80 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_70'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 90 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_71'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 100 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_72'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 110 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_73'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 120 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_74'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 130 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_75'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 140 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_76'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 150 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_77'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 160 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_78'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 170 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_79'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 180 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_80'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 190 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_81'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-190 200 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_82'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -200 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_83'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -190 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_84'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -180 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_85'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -170 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_86'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -160 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_87'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -150 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_88'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -140 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_89'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -130 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_90'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -120 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_91'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -110 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_92'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -100 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_93'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -90 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_94'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -80 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_95'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -70 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_96'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -60 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_97'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -50 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_98'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -40 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+
+			<model name='uav_99'>
+			<include>
+				<uri>model://quadrotor</uri>
+				<pose>-180 -30 1 0 0 0</pose>
+				<plugin name='takeoff' filename='libtakeoff.so'/>
+			</include>
+			</model>
+		</world>
+	</sdf>

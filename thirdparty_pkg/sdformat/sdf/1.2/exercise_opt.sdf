@@ -1,0 +1,45 @@
+<!-- Exercise_opt -->
+<!--
+***********************************************************
+**Description: the gazebo_exercise labels to optimize     *
+**Author: zenglei                                         *
+**Date: 2019-05-15                                        *
+**Version: V1.0                                           *
+***********************************************************
+-->
+<element name="exercise_opt" required="0">
+  <description>The Gazebo_exercise tag specifies the on-off and properties of the optimization.</description>
+  <element name="process_messages_switch" type="bool" default="1" required="0">
+    <description>whether optimize the logic of the topic to pub in the World::processMessages or not</description>
+  </element>
+  <element name="collide_space" type="int" default="0" required="0">
+    <description>target the type of the collide space</description>
+  </element>
+  <element name="event_signal" required="0">
+    <description>target the number of the thread that used by parallel.</description>
+    <attribute name="parallel_type" type="int" default="0" required="0">
+      <description>The type of parallel.</description>
+    </attribute>
+
+    <attribute name="threads" type="int" default="8" required="0">
+      <description>The numbers of the threads.</description>
+    </attribute>
+
+  </element>
+  <element name="updatephysics_dxprocessislands" required="0">
+    <description>target the number of the thread that used by parallel.</description>
+    <attribute name="parallel_type" type="int" default="0" required="0">
+      <description>The type of parallel.</description>
+    </attribute>
+
+    <attribute name="threads" type="int" default="8" required="0">
+      <description>The numbers of the threads.</description>
+    </attribute>
+  </element>
+  <element name="dxhashspace_collide" required="0">
+    <description>target the number of the thread that used by parallel.</description>
+    <attribute name="threads" type="int" default="0" required="0">
+      <description>The number of  thread to parallel.</description>
+    </attribute>
+  </element>
+</element> <!-- exercise_opt -->

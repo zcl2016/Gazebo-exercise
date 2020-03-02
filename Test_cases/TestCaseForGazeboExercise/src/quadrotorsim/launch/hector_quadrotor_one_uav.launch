@@ -1,0 +1,18 @@
+<!-- This is a launch file that runs the bare minimum requirements to get -->
+<!-- gazebo running for a fixed-wing aircraft -->
+
+<launch>
+  
+  <include file="$(find quadrotorsim)/worlds/empty_world.launch">
+    <arg name="paused" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="verbose" value="false"/>
+    <arg name="debug" value="false"/>
+    <arg name="world_name" value="$(find quadrotorsim)/worlds/quad_one_uav.world"/>
+  </include>
+
+  <node name="action_controller" pkg="quadrotorsim" type="action_controller" output="screen">
+    <param name="topicname" type="string" value="/uav_0/cmd_vel" />
+  </node>
+  
+</launch>

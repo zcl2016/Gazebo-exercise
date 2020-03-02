@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- Configure Aircraft Truth Macro -->
+    <xacro:macro
+      name="aircraft_udp_receive"
+      params="namespace parent_link">
+      <gazebo>
+        <plugin filename="libaircraft_udp_receive_plugin.so" name="${namespace}_aircraft_udp_receive_plugin">
+          <namespace>${namespace}</namespace>
+          <linkName>base_link</linkName>
+        </plugin>
+      </gazebo>
+  </xacro:macro>
+
+</robot>
